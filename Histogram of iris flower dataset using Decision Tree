@@ -1,0 +1,43 @@
+platform : google.colab
+ upload csv file of iris flower separately 
+ or to have and upload option for every execution use the commented code on line 8 and 9 
+# code:
+
+import pandas as pd
+#from google.colab import files
+#uploaded = files.upload()
+iris = pd.read_csv('iris.csv')
+iris.head()                             # dataset of iris flower will be displayed initially
+
+
+from matplotlib import pyplot as plt      # importing the plt module for plotting the objects
+
+# histogram for sepal length column 
+plt.figure(figsize=(6,6))                    # figure size
+plt.hist(iris['Sepal.Length'])                   # creating an histogram with the plt.hist method
+plt.title("distribution of sepal length")     # title
+plt.xlabel("Sepal.Length")                    # labels
+plt.show()                                    # displaying the histogram
+
+#similarly for all the columns 
+
+# histogram for sepal length
+plt.figure(figsize=(6,6))
+plt.hist(iris['Sepal.Width'],color = 'r')
+plt.title('Distribution of sepal width')
+plt.xlabel('Sepal.Width')
+plt.show()
+
+# histogram for petal length
+plt.figure(figsize=(6,6))
+plt.hist(iris['Petal.Length'],color = 'g')
+plt.title('Distribution of Petal Length')
+plt.xlabel('Petal.Length')
+plt.show()
+
+# histogram for petal width
+plt.figure(figsize=(6,6))
+plt.hist(iris['Petal.Width'],color = 'r')
+plt.title('Distribution of petal width')
+plt.xlabel('Petal.Width')
+plt.show()
